@@ -178,6 +178,44 @@
 		</div>
 	</div>
 	<!-- //modal -->
+	<div class="modal fade" id="upPass" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title text-center">Cập nhật password</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form action="updatepass" method="post">
+						@csrf
+						<div class="form-group">
+							<label class="col-form-label">Mật Khẩu</label>
+							<input type="password" class="form-control" placeholder="Nhập password mới" name="password">
+							@if($errors->has('password'))
+								<div class="alert alert-danger">
+									{{ $errors->first('password') }}
+								</div>
+							@endif
+						</div>
+						<div class="form-group">
+							<label class="col-form-label">Nhập Lại Mật Khẩu</label>
+							<input type="password" class="form-control" placeholder="Nhập lại password" name="re_password">
+							@if($errors->has('re_password'))
+								<div class="alert alert-danger">
+									{{ $errors->first('re_password') }}
+								</div>
+							@endif
+						</div>
+						<div class="right-w3l">
+							<input type="submit" class="form-control" value="Cập nhật">
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
 	<!-- //top-header -->
 
 	<!-- header-bottom-->

@@ -22,10 +22,12 @@
 				<li class="text-center border-right text-white">
 					<i class="fas fa-phone mr-2"></i> 0988888888
 				</li>
+				
 				@if(Auth::check())
 					<li class="text-center border-right ">
 						<a href="logout" title="Đăng Xuất" class="text-white"><i class="fas fa-sign-in-alt mr-2"></i>{{ Auth::user()->name }}</a>
 					</li>
+					
 					@if(Auth::user()->password == '')
 						<div class="modal fade updatePass" tabindex="-1" role="dialog" aria-hidden="true">
 							<div class="modal-dialog" role="document">
@@ -65,6 +67,12 @@
 								</div>
 							</div>
 						</div>
+						@else
+						<li class="text-center border-right text-white">
+							<a href="#" data-toggle="modal" data-target="#upPass" class="text-white">
+								<i class="fas fa-sign-in-alt mr-2"></i> Cập nhật mật khẩu
+							</a>
+						</li>
 					@endif
 				@else
 					<li class="text-center border-right text-white">
